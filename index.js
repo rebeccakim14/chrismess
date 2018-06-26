@@ -1,7 +1,7 @@
 //console.log('It works!')
 
 function updateHeader() {
-    document.getElementById("thisHeading").innerHTML="merry chrismess"
+    document.getElementById("secondary heading").innerHTML="it changed"
 }
 
 
