@@ -1,3 +1,10 @@
+const button1 = document.querySelector('update button')
+
+function updateHeader() {
+    const heading = document.getElementById("secondary heading")
+    heading.textContent = "it changed"
+}
+
 class App {
     constructor() {
         const form = document.querySelector('form#flickForm')
@@ -7,11 +14,14 @@ class App {
         })
     }
 
-/*updateHeader() {
-    document.getElementById("secondary heading").innerHTML="it changed" 
+/*const button1 = document.querySelector('update button')
+updateHeader() {
+    const heading = document.getElementById("secondary heading")
+    heading.textContent = "it changed"
 }
+//button1.addEventListener('click',updateHeader)
 
-updateCustom() {
+/*updateCustom() {
     const formChange = document.querySelector('.changeIsGood') //gets the content of the textbox selected
     const formChangeText = formChange.value; //store the text in a variable
     document.getElementById("thisHeading").innerHTML=formChangeText //have the heading change
@@ -61,5 +71,6 @@ updateFlicks(ev) {
 }
 const app = new App()
 
+button1.addEventListener('click',updateHeader)
 
 
