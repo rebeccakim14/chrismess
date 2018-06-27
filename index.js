@@ -8,7 +8,8 @@ function updateCustom() {
     document.getElementById("thisHeading").innerHTML=formChangeText //have the heading change
     event.preventDefault() //prevents from refreshing
     formChange.value='' //makes the text dissapear after written
-
 }
+
+
 
 const button = addEventListener('submit',updateCustom) //does the change
