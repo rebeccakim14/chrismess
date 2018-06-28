@@ -51,30 +51,29 @@ renderItem(flick) { //items in the list function
         item.appendChild(span)
     })
 
-    //somehow create button 
-    //const deleteButton = this.renderButton('trash','Trash')
+    const deleteButton = this.renderButton('delete','delete') //created delete button
 
-    //deleteButton.addEventListener('click',(ev) => {
-      //  this.deleteItem(ev)
-   // })
+    deleteButton.addEventListener('click',(ev) => { //button to work with deleteItem function
+        this.deleteItem(ev)
+    })
 
-    //item.appendChild(deleteButton)
+    item.appendChild(deleteButton) //appending button to list items
 
     return item
 
 }
 
-/*renderButton(name,value) { //function for creating button kind of like span function
+renderButton(name,value) { //function for creating button kind of like span function
     const button2 = document.createElement('button')
     button2.classList.add(name)
-    button.textContent = value
-    return button
+    button2.textContent = value
+    return button2
 }
 
-deleteItem(ev) {
+deleteItem(ev) { //deleting from function
     ev.parentNode.parentNode.removeChild(ev.parentNode)
 }
-*/
+
 updateFlicks(ev) {
     const f = ev.target //takes in parameter
 
