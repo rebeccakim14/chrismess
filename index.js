@@ -7,21 +7,13 @@ function updateHeader() {
 
 class App {
     constructor() {
+        this.flicks=[] //making an array
         const form = document.querySelector('form#flickForm')
         form.addEventListener('submit', (ev) => {
             ev.preventDefault() //prevents from refreshing
             this.updateFlicks(ev)
         })
-
-        this.flicks=[] //making an array
     }
-
-/*const button1 = document.querySelector('update button')
-updateHeader() {
-    const heading = document.getElementById("secondary heading")
-    heading.textContent = "it changed"
-}
-//button1.addEventListener('click',updateHeader)
 
 /*updateCustom() {
     const formChange = document.querySelector('.changeIsGood') //gets the content of the textbox selected
@@ -52,12 +44,19 @@ renderItem(flick) { //items in the list function
     })
 
     const deleteButton = this.renderButton('delete','delete') //created delete button
+    //const favButton = this.renderButton('fave','fave') //created favorite button
 
     deleteButton.addEventListener('click',(ev) => { //button to work with deleteItem function
         this.deleteItem(ev)
     })
 
-    item.appendChild(deleteButton) //appending button to list items
+    /*favButton.addEventListener('click', (ev) => {
+        this.favItem(ev)
+    })
+    */
+
+    item.appendChild(deleteButton) //appending delete button to list items
+    //item.appendChild(favButton)
 
     return item
 
@@ -70,12 +69,23 @@ renderButton(name,value) { //function for creating button kind of like span func
     return button2
 }
 
+/*favItem(ev) {
+    const list3 = document.getElementById('flicks')
+    if (list3.hasChildNodes()) {
+        list3.childNodes.textContent = ' this is your favorite' 
+    }
+}
+*/
+
 deleteItem(ev) { //deleting function
     const list2 = document.getElementById('flicks')
     if (list2.hasChildNodes()) {
         list2.removeChild(list2.childNodes[0]);
     }
+    const i = this.flicks.indexOf(flick) //deleting from array
+    this.flicks.splice(i,1)
 }
+
 
 updateFlicks(ev) {
     const f = ev.target //takes in parameter
