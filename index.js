@@ -70,8 +70,11 @@ renderButton(name,value) { //function for creating button kind of like span func
     return button2
 }
 
-deleteItem(ev) { //deleting from function
-    ev.parentNode.parentNode.removeChild(ev.parentNode)
+deleteItem(ev) { //deleting function
+    const list2 = document.getElementById('flicks')
+    if (list2.hasChildNodes()) {
+        list2.removeChild(list2.childNodes[0]);
+    }
 }
 
 updateFlicks(ev) {
